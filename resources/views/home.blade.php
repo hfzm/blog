@@ -34,12 +34,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row justify-content-center">
-                            <div class="col-md-10">
-                                <textarea name="comment" class="form-control mb-1" rows="2" placeholder="Write a comment here..."></textarea>
-                                <button class="btn btn-success float-right">Submit Comment</button>
-                            </div>
-                        </div>
+                        <add-comment :userid="{{Auth::user()->id}}" :postid="{{$post->id}}"></add-comment>
                         <hr>
                     @endforeach
                 </div>
