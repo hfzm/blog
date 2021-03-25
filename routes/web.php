@@ -24,3 +24,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/post/create', 'PostController@create')->name('postCreate');
 Route::post('/post/store', 'PostController@store')->name('postStore');
+Route::post('/comment/store', 'CommentController@store');
+Route::get('/getComments/{post}', 'CommentController@getComments');

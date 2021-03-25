@@ -19,27 +19,8 @@
                                 <p>{{Str::limit($post->body, 100)}}</p>
                             </div>
                         </div>
-                        <div class="row justify-content-center mb-1">
-                            <div class="col-md-10">
-                                <div class="card">
-                                    <div class="card-header">Comments</div>
-                                    <div class="card-body">
-                                        <p>
-                                            <span class="badge badge-pill badge-light">Ali Commented:</span> hey nice pic!
-                                        </p>
-                                        <p>
-                                            <span class="badge badge-pill badge-light">Ali Commented:</span> hey nice pic!
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row justify-content-center">
-                            <div class="col-md-10">
-                                <textarea name="comment" class="form-control mb-1" rows="2" placeholder="Write a comment here..."></textarea>
-                                <button class="btn btn-success float-right">Submit Comment</button>
-                            </div>
-                        </div>
+                        <get-comments :userid="{{Auth::user()->id}}" :postid="{{$post->id}}"></get-comments>
+                        <add-comment :userid="{{Auth::user()->id}}" :postid="{{$post->id}}"></add-comment>
                         <hr>
                     @endforeach
                 </div>
